@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Vista de formulario para Inscripcion -->
+        <record id="view_inscripcion_form" model="ir.ui.view">
+            <field name="name">gestion_academica.inscripcion.form</field>
+            <field name="model">gestion_academica.inscripcion</field>
+            <field name="arch" type="xml">
+                <form string="Inscripción">
+                    <sheet>
+                        <group>
+                            <field name="gestion_paralelo_id" required="1"/>
+                            <field name="estudiante_id" required="1"/>
+                            <field name="fecha" required="1"/>
+                            <field name="monto_total" required="1"/>
+                            <field name="es_becado" required="1"/>
+                        </group>
+                        <group>
+                            <field name="gestion_id"/>
+                            <field name="paralelo_id"/>
+                            <field name="curso_id"/>
+                            <field name="sucursal_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Vista de árbol para Inscripcion -->
+        <record id="view_inscripcion_tree" model="ir.ui.view">
+            <field name="name">gestion_academica.inscripcion.tree</field>
+            <field name="model">gestion_academica.inscripcion</field>
+            <field name="arch" type="xml">
+                <tree string="Inscripciones">
+                    <field name="gestion_paralelo_id"/>
+                    <field name="estudiante_id"/>
+                    <field name="fecha"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Acción para abrir la vista de inscripciones -->
+        <record id="abrir_inscripcion_view" model="ir.actions.act_window">
+            <field name="name">Inscripciones</field>
+            <field name="res_model">gestion_academica.inscripcion</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Crea la primera inscripción
+                </p>
+            </field>
+        </record>
+
+        <!-- <record model="ir.actions.act_window" id="abrir_inscripcion_view">
+            <field name="name">Inscripcions</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">gestion_academica.inscripcion</field>
+            <field name="view_mode">kanban,tree,form</field>
+        </record> -->
+
+
+        <record model="ir.actions.act_window.view" id="abrir_inscripcion_view_form">
+            <field name="act_window_id" ref="abrir_inscripcion_view" />
+            <field name="sequence" eval="20" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_inscripcion_form" />
+        </record>
+
+        <record model="ir.actions.act_window.view" id="abrir_inscripcion_view_tree">
+            <field name="act_window_id" ref="abrir_inscripcion_view" />
+            <field name="sequence" eval="10" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_inscripcion_tree" />
+        </record>
+
+    </data>
+</odoo>

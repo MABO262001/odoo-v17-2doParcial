@@ -1,0 +1,60 @@
+<odoo>
+    <record id="view_gestion_paralelo_search" model="ir.ui.view">
+        <field name="name">gestion_paralelo.search</field>
+        <field name="model">gestion_academica.gestion_paralelo</field>
+        <field name="arch" type="xml">
+            <search string="Buscar Paralelos">
+                <field name="sucursal_id"/>
+                <field name="gestion_id"/>
+                <filter name="filter_sucursal" string="Sucursal" domain="[('sucursal_id', '!=', False)]"/>
+                <filter name="filter_gestion" string="Gestión" domain="[('gestion_id', '!=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_gestion_paralelo_tree" model="ir.ui.view">
+        <field name="name">gestion_paralelo.tree</field>
+        <field name="model">gestion_academica.gestion_paralelo</field>
+        <field name="arch" type="xml">
+            <tree string="Paralelos">
+                <field name="gestion_id"/>
+                <field name="paralelo_id"/>
+                <field name="curso_id" readonly="1"/>
+                <field name="sucursal_id" readonly="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_gestion_paralelo_form" model="ir.ui.view">
+        <field name="name">gestion_paralelo.form</field>
+        <field name="model">gestion_academica.gestion_paralelo</field>
+        <field name="arch" type="xml">
+            <form string="Asignar Horarios a Paralelo">
+                <sheet>
+                    <group>
+                        <field name="gestion_id"/>
+                        <field name="paralelo_id"/>
+                        <field name="curso_id" readonly="1"/>
+                        <field name="sucursal_id" readonly="1"/>
+                    </group>
+                    <group>
+                        <field name="gestion_paralelo_materia_profesor_horario_ids">
+                            <tree editable="bottom">
+                                <field name="materia_profesor_horario_id"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="abrir_asigancion_horario" model="ir.actions.act_window">
+        <field name="name">Asignar Horarios</field>
+        <field name="res_model">gestion_academica.gestion_paralelo</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_gestion_paralelo_tree"/>
+        <field name="search_view_id" ref="view_gestion_paralelo_search"/>
+    </record>
+</odoo>

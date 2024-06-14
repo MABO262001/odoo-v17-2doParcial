@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Grupo de usuarios para Gestión Académica -->
+        <record id="group_gestion_academica_user" model="res.groups">
+            <field name="name">Usuario Gestión Académica</field>
+            <field name="category_id" ref="base.module_category_human_resources" />
+        </record>
+
+        <!-- Reglas de acceso -->
+        <record id="rule_gestion_academica_estudiante" model="ir.rule">
+            <field name="name">Estudiantes: Regla de acceso</field>
+            <field name="model_id" ref="model_gestion_academica_estudiante" />
+            <field name="groups" eval="[(4, ref('group_gestion_academica_user'))]" />
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+
+        <record id="rule_gestion_academica_profesor" model="ir.rule">
+            <field name="name">Profesores: Regla de acceso</field>
+            <field name="model_id" ref="model_gestion_academica_profesor" />
+            <field name="groups" eval="[(4, ref('group_gestion_academica_user'))]" />
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+
+        <record id="rule_gestion_academica_materia" model="ir.rule">
+            <field name="name">Materias: Regla de acceso</field>
+            <field name="model_id" ref="model_gestion_academica_materia" />
+            <field name="groups" eval="[(4, ref('group_gestion_academica_user'))]" />
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+
+        <record id="rule_gestion_academica_curso" model="ir.rule">
+            <field name="name">Cursos: Regla de acceso</field>
+            <field name="model_id" ref="model_gestion_academica_curso" />
+            <field name="groups" eval="[(4, ref('group_gestion_academica_user'))]" />
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+
+        <record id="rule_gestion_academica_paralelo" model="ir.rule">
+            <field name="name">Paralelos: Regla de acceso</field>
+            <field name="model_id" ref="model_gestion_academica_paralelo" />
+            <field name="groups" eval="[(4, ref('group_gestion_academica_user'))]" />
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+
+        <record id="rule_gestion_academica_sucursal" model="ir.rule">
+            <field name="name">Paralelos: Regla de acceso</field>
+            <field name="model_id" ref="model_gestion_academica_sucursal" />
+            <field name="groups" eval="[(4, ref('group_gestion_academica_user'))]" />
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+
+        <record id="rule_gestion_academica_gestion" model="ir.rule">
+            <field name="name">Gestion: Regla de acceso</field>
+            <field name="model_id" ref="model_gestion_academica_gestion" />
+            <field name="groups" eval="[(4, ref('group_gestion_academica_user'))]" />
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+
+        <record id="rule_gestion_academica_gestion_paralelo" model="ir.rule">
+            <field name="name">Gestion, paralelo: Regla de acceso</field>
+            <field name="model_id" ref="model_gestion_academica_gestion_paralelo" />
+            <field name="groups" eval="[(4, ref('group_gestion_academica_user'))]" />
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+
+        <record id="rule_gestion_academica_bloque" model="ir.rule">
+            <field name="name">Bloque: Regla de acceso</field>
+            <field name="model_id" ref="model_gestion_academica_bloque" />
+            <field name="groups" eval="[(4, ref('group_gestion_academica_user'))]" />
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+
+        <record id="rule_gestion_academica_piso" model="ir.rule">
+            <field name="name">Piso: Regla de acceso</field>
+            <field name="model_id" ref="model_gestion_academica_piso" />
+            <field name="groups" eval="[(4, ref('group_gestion_academica_user'))]" />
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+
+        <record id="rule_gestion_academica_subgestion" model="ir.rule">
+            <field name="name">Subgestion: Regla de acceso</field>
+            <field name="model_id" ref="model_gestion_academica_subgestion" />
+            <field name="groups" eval="[(4, ref('group_gestion_academica_user'))]" />
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+
+        <record id="rule_gestion_academica_parentesco" model="ir.rule">
+            <field name="name">Parentesco: Regla de acceso</field>
+            <field name="model_id" ref="model_gestion_academica_parentesco" />
+            <field name="groups" eval="[(4, ref('group_gestion_academica_user'))]" />
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+
+        <record id="rule_gestion_academica_apoderado" model="ir.rule">
+            <field name="name">Apoderado: Regla de acceso</field>
+            <field name="model_id" ref="model_gestion_academica_apoderado" />
+            <field name="groups" eval="[(4, ref('group_gestion_academica_user'))]" />
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+
+        <record id="rule_gestion_academica_horario" model="ir.rule">
+            <field name="name">Hoarios: Regla de acceso</field>
+            <field name="model_id" ref="model_gestion_academica_horario" />
+            <field name="groups" eval="[(4, ref('group_gestion_academica_user'))]" />
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+        <record id="rule_gestion_academica_materia_profesor" model="ir.rule">
+            <field name="name">Materia Profesor: Regla de acceso</field>
+            <field name="model_id" ref="model_gestion_academica_materia_profesor" />
+            <field name="groups" eval="[(4, ref('group_gestion_academica_user'))]" />
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+
+        <record id="rule_gestion_academica_materia_profesor_horario" model="ir.rule">
+            <field name="name">Materia Profesor Horario: Regla de acceso</field>
+            <field name="model_id" ref="model_gestion_academica_materia_profesor_horario" />
+            <field name="groups" eval="[(4, ref('group_gestion_academica_user'))]" />
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+
+        <record id="rule_gestion_academica_inscripcion" model="ir.rule">
+            <field name="name">Inscripcion: Regla de acceso</field>
+            <field name="model_id" ref="model_gestion_academica_inscripcion" />
+            <field name="groups" eval="[(4, ref('group_gestion_academica_user'))]" />
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+
+        <record id="rule_gestion_academica_gestion_paralelo_materia_profesor_horario" model="ir.rule">
+            <field name="name">Gestion materia profesor paralelo horario: Regla de acceso</field>
+            <field name="model_id" ref="model_gestion_academica_gestion_paralelo_materia_profesor_horario" />
+            <field name="groups" eval="[(4, ref('group_gestion_academica_user'))]" />
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+        
+        <record id="rule_gestion_academica_nota" model="ir.rule">
+            <field name="name">Nota: Regla de acceso</field>
+            <field name="model_id" ref="model_gestion_academica_nota" />
+            <field name="groups" eval="[(4, ref('group_gestion_academica_user'))]" />
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+
+        <record id="rule_gestion_academica_matricula" model="ir.rule">
+            <field name="name">Matricula: Regla de acceso</field>
+            <field name="model_id" ref="model_gestion_academica_matricula" />
+            <field name="groups" eval="[(4, ref('group_gestion_academica_user'))]" />
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+
+    </data>
+</odoo>

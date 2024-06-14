@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="ga_menu_root"
+        name="Gestion Academica"
+        sequence="220" />
+
+    <menuitem id="menu_estudiante_root"
+        name="Estudiantes"
+        parent="ga_menu_root"
+        sequence="80"
+        action="abrir_estudiante_view" />
+
+    <menuitem id="menu_estudiante"
+        name="Estudiantes"
+        parent="menu_estudiante_root"
+        sequence="10"
+        action="abrir_estudiante_view" />
+
+    <menuitem id="menu_parentesco"
+        name="Apoderados"
+        parent="menu_estudiante_root"
+        sequence="10"
+        action="abrir_apoderado_view" />
+
+    <!-- <menuitem id="menu_nota"
+        name="Notas"
+        parent="menu_estudiante_root"
+        sequence="10"
+        action="abrir_nota_view" /> -->
+
+    <menuitem id="menu_profesor"
+        name="Profesores"
+        parent="ga_menu_root"
+        sequence="20"
+        action="abrir_profesor_view" />
+
+    <menuitem id="menu_materia"
+        name="Materias"
+        parent="ga_menu_root"
+        sequence="20"
+        action="abrir_materia_view" />
+
+    <menuitem id="menu_infraestructura_root"
+        name="Infraestructura"
+        parent="ga_menu_root"
+        sequence="60" />
+
+    <menuitem id="menu_sucursal"
+        name="Sucursales"
+        parent="menu_infraestructura_root"
+        sequence="30"
+        action="abrir_sucursal_view" />
+
+    <menuitem id="menu_bloque"
+        name="Bloques"
+        parent="menu_infraestructura_root"
+        sequence="30"
+        action="abrir_bloque_view" />
+
+    <menuitem id="menu_curso"
+        name="Cursos"
+        parent="menu_infraestructura_root"
+        sequence="30"
+        action="abrir_curso_view" />
+
+    <menuitem id="menu_paralelos"
+        name="Paralelos"
+        parent="menu_infraestructura_root"
+        sequence="30"
+        action="abrir_paralelo_view" />
+
+    <menuitem id="menu_gestion"
+        name="Gestiones"
+        parent="ga_menu_root"
+        sequence="20"
+        action="abrir_gestion_view" />
+
+    <menuitem id="menu_materia_profesor_horario"
+        name="Gestionar horarios"
+        parent="menu_materia"
+        sequence="10"
+        action="abrir_horario_view" />
+
+    <menuitem id="menu_asignacion_horario"
+        name="Asignar horarios"
+        parent="menu_materia"
+        sequence="10"
+        action="abrir_asigancion_horario" />
+
+    <menuitem id="menu_servicios_root"
+        name="Servicios"
+        parent="ga_menu_root"
+        sequence="90" />
+
+
+
+    <menuitem id="menu_inscripcion"
+        name="Inscripciones"
+        parent="menu_servicios_root"
+        sequence="40"
+        action="abrir_inscripcion_view" />
+
+    <!-- <menuitem id="menu_pagos"
+        name="Pagos"
+        parent="menu_servicios_root"
+        sequence="40"
+        action="abrir_pago_view" /> -->
+
+</odoo>

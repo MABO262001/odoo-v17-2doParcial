@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_bloque_kanban" model="ir.ui.view">
+            <field name="name">Bloque Kanban</field>
+            <field name="model">gestion_academica.bloque</field>
+            <field name="arch" type="xml">
+                <kanban class="o_res_partner_kanban">
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click o_res_partner_kanban">
+                                <a type="open">
+                                    
+                                    <div class="oe_kanban_details">
+                                        <h4>
+                                            <field name="name" />
+                                        </h4>
+                                        <ul>
+                                            <li t-if="record.ubicacion.raw_value">
+                                                <field name="ubicacion" />
+                                            </li>
+                                            <li t-if="record.sucursal_id.raw_value">
+                                                <field name="sucursal_id" />
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </a>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="view_bloque_tree" model="ir.ui.view">
+            <field name="name">gestion_academica.bloque.tree</field>
+            <field name="model">gestion_academica.bloque</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Bloque">
+                    <field name="name"/>
+                    <field name="ubicacion"/>
+                    <field name="sucursal_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_bloque_form" model="ir.ui.view">
+            <field name="name">gestion_academica.bloque.form</field>
+            <field name="model">gestion_academica.bloque</field>
+            <field name="arch" type="xml">
+                <form string="Bloque">
+                    <sheet>
+                        <group>
+                            <field name="name" required="1"/>
+                            <field name="ubicacion"/>
+                            <field name="sucursal_id" required="1"/>
+                        </group>
+                        <notebook>
+                            <page string="Pisos">
+                                <field name="piso_ids">
+                                    <tree editable="bottom">
+                                        <field name="name"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="abrir_bloque_view">
+            <field name="name">Bloques</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">gestion_academica.bloque</field>
+            <field name="view_mode">kanban,tree,form</field>
+        </record>
+
+
+        <record model="ir.actions.act_window.view" id="abrir_bloque_view_form">
+            <field name="act_window_id" ref="abrir_bloque_view" />
+            <field name="sequence" eval="20" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_bloque_form" />
+        </record>
+
+        <record model="ir.actions.act_window.view" id="abrir_bloque_view_tree">
+            <field name="act_window_id" ref="abrir_bloque_view" />
+            <field name="sequence" eval="10" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_bloque_tree" />
+        </record>
+
+        <record model="ir.actions.act_window.view" id="abrir_bloque_view_kanban">
+            <field name="act_window_id" ref="abrir_bloque_view" />
+            <field name="sequence" eval="5" />
+            <field name="view_mode">kanban</field>
+            <field name="view_id" ref="view_bloque_kanban" />
+        </record>
+
+
+    </data>
+
+</odoo>

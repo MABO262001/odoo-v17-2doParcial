@@ -1,0 +1,92 @@
+
+<odoo>
+    <data>
+        
+        
+
+        <!-- Vista Tree -->
+        <record id="view_horario_tree" model="ir.ui.view">
+            <field name="name">gestion_academica.horario.tree</field>
+            <field name="model">gestion_academica.horario</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Horario">
+                    <field name="dia"/>
+                    <field name="hora_inicio"/>
+                    <field name="minuto_inicio"/>
+                    <field name="am_pm_inicio"/>
+                    <field name="hora_final"/>
+                    <field name="minuto_final"/>
+                    <field name="am_pm_final"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- Vista Form -->
+        <record id="view_horario_form" model="ir.ui.view">
+            <field name="name">gestion_academica.horario.form</field>
+            <field name="model">gestion_academica.horario</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Horario">
+                    <sheet>
+                        <group>
+                            <field name="dia"/>
+                        </group>
+                        <group>
+                            <field name="hora_inicio"/>
+                            <field name="minuto_inicio"/>
+                            <field name="am_pm_inicio"/>
+                        </group>
+                        <group>
+                            <field name="hora_final"/>
+                            <field name="minuto_final"/>
+                            <field name="am_pm_final"/>
+                        </group>
+                        
+                        <notebook colspan="4">
+                            
+                            <page string="Profesores registrados al horario">
+                                <field name="materia_profesor_horario_ids">
+                                    <tree editable="bottom">
+                                        <field name="materia_profesor_id"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <!-- Acción del panel superior -->
+        <record model="ir.actions.act_window" id="abrir_horario_view">
+            <field name="name">Horario</field>
+            <field name="res_model">gestion_academica.horario</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Crea los horarios para las materias.
+                </p>
+            </field>
+        </record>
+
+        <!-- Vistas en Acción -->
+        <record model="ir.actions.act_window.view" id="abrir_horario_view_form">
+            <field name="act_window_id" ref="abrir_horario_view" />
+            <field name="sequence" eval="20" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_horario_form" />
+        </record>
+
+        <record model="ir.actions.act_window.view" id="abrir_horario_view_tree">
+            <field name="act_window_id" ref="abrir_horario_view" />
+            <field name="sequence" eval="10" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_horario_tree" />
+        </record>
+
+        
+
+    </data>
+</odoo>

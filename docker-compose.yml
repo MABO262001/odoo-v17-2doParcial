@@ -1,0 +1,33 @@
+version: '3'
+services:
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=mabo
+      - POSTGRES_PASSWORD=262001
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data
+    
+    restart: always
+
+  web:
+    build: .
+    depends_on:
+      - db
+    ports:
+      - "8069:8069"
+
+    restart: always
+
+    volumes:
+      - ./addons:/mnt/extra-addons
+    environment:
+      - HOST=db
+      - USER=mabo
+      - PASSWORD=262001
+      - DATABASE=postgres
+    command: ["odoo", "-c", "/etc/odoo/odoo.conf", "-u", "ga"]
+
+volumes:
+  odoo-db-data:

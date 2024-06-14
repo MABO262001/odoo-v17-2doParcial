@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_paralelo_kanban" model="ir.ui.view">
+            <field name="name">Paralelo Kanban</field>
+            <field name="model">gestion_academica.paralelo</field>
+            <field name="arch" type="xml">
+                <kanban class="o_res_partner_kanban">
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click o_res_partner_kanban">
+                                <a type="open">
+                                    
+                                    <div class="oe_kanban_details">
+                                        <h4>
+                                            <field name="name" />
+                                        </h4>
+                                        <ul>
+                                            
+                                            <li t-if="record.curso_id.raw_value">
+                                                <field name="curso_id" />
+                                            </li>
+                                            <li t-if="record.sucursal_id.raw_value">
+                                                <field name="sucursal_id" />
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </a>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="view_paralelo_tree" model="ir.ui.view">
+            <field name="name">gestion_academica.paralelo.tree</field>
+            <field name="model">gestion_academica.paralelo</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Paralelo">
+                    <field name="name"/>
+                    <field name="curso_id"/>
+                    <field name="sucursal_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_paralelo_form" model="ir.ui.view">
+            <field name="name">gestion_academica.paralelo.form</field>
+            <field name="model">gestion_academica.paralelo</field>
+            <field name="arch" type="xml">
+                <form string="Paralelo">
+                    <sheet>
+                        <group>
+                            <field name="name" required="1"/>
+                            <field name="curso_id" required="1"/>
+                            <field name="sucursal_id" required="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="abrir_paralelo_view">
+            <field name="name">Paralelos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">gestion_academica.paralelo</field>
+            <field name="view_mode">kanban,tree,form</field>
+        </record>
+
+
+        <record model="ir.actions.act_window.view" id="abrir_paralelo_view_form">
+            <field name="act_window_id" ref="abrir_paralelo_view" />
+            <field name="sequence" eval="20" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_paralelo_form" />
+        </record>
+
+        <record model="ir.actions.act_window.view" id="abrir_paralelo_view_tree">
+            <field name="act_window_id" ref="abrir_paralelo_view" />
+            <field name="sequence" eval="10" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_paralelo_tree" />
+        </record>
+
+        <record model="ir.actions.act_window.view" id="abrir_paralelo_view_kanban">
+            <field name="act_window_id" ref="abrir_paralelo_view" />
+            <field name="sequence" eval="5" />
+            <field name="view_mode">kanban</field>
+            <field name="view_id" ref="view_paralelo_kanban" />
+        </record>
+
+
+    </data>
+
+</odoo>

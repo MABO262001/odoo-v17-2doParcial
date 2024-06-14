@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Ejecutar Docker Compose Up",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/fake.py",
+            "console": "integratedTerminal",
+            "preLaunchTask": "Docker Compose Up"
+        }
+    ]
+}
