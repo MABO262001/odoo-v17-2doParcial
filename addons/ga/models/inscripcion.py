@@ -29,7 +29,7 @@ class Inscripcion(models.Model):
                     monto = record.monto_total / len(subgestiones)
                 else:
                     monto = record.monto_total
-                pagada = 'inpaga'
+                pagada = 'impaga'
                 
             for subgestion in subgestiones:
                 self.env['gestion_academica.matricula'].create({
@@ -37,6 +37,6 @@ class Inscripcion(models.Model):
                     'estudiante_id': record.estudiante_id.id,
                     'subgestion_id': subgestion.id,
                     'monto': monto,
-                    'pagada' : pagada,
+                    'pagada': pagada,
                 })
         return record
