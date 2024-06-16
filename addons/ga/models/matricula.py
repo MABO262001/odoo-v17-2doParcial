@@ -6,7 +6,7 @@ class Matricula(models.Model):
 
     pagada = fields.Selection(
         [('pagada', 'pagada'),
-        ('inpaga', 'inpaga'),],
+        ('impaga', 'impaga'),],
         string='Estado',
         required=True
     )
