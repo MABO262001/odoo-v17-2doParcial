@@ -133,7 +133,7 @@
             <field name="groups" eval="[(4, ref('group_gestion_academica_user'))]" />
             <field name="domain_force">[(1,'=',1)]</field>
         </record>
-        
+
         <record id="rule_gestion_academica_nota" model="ir.rule">
             <field name="name">Nota: Regla de acceso</field>
             <field name="model_id" ref="model_gestion_academica_nota" />
@@ -147,6 +147,22 @@
             <field name="groups" eval="[(4, ref('group_gestion_academica_user'))]" />
             <field name="domain_force">[(1,'=',1)]</field>
         </record>
+
+
+        <!-- Regla de acceso público APIS -->
+
+        <!-- API Estudiante -->
+        <record id="rule_public_gestion_academica_estudiante" model="ir.rule">
+            <field name="name">Acceso Publico Estudiantes</field>
+            <field name="model_id" ref="model_gestion_academica_estudiante" />
+            <field name="groups" eval="[(4, ref('base.group_public'))]" />
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
 
     </data>
 </odoo>

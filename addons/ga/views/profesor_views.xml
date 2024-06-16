@@ -95,7 +95,7 @@
                                     
                                 </group>
                             </page>
-                                <page string="Horarios">
+                                <page string="Materia Del Docente">
                                     <field name="materia_profesor_ids">
                                         <tree editable="bottom">
                                             <field name="materia_id"/>
