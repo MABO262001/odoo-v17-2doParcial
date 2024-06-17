@@ -18,8 +18,6 @@ class EstudianteController(http.Controller):
                     'direccion': estudiante.direccion,
                     'fecha_nacimiento': estudiante.fecha_nacimiento.strftime('%Y-%m-%d') if estudiante.fecha_nacimiento else '',
                     'telefono': estudiante.telefono,
-                    'apoderado_id': estudiante.parentesco_ids.apoderado_id.id,
-                    'apoderado': estudiante.parentesco_ids.apoderado_id.name,
                 })
             return request.make_response(
                 json.dumps(data),
