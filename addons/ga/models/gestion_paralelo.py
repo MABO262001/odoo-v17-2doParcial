@@ -16,6 +16,11 @@ class GestionParalelo(models.Model):
 
 
     gestion_paralelo_name = fields.Char(string='Gestion, curso, paralelo', compute='_compute_gestion_paralelo', store=True)
+    
+    _sql_constraints = [
+        ('unique_gestion_paralelo', 'UNIQUE(gestion_id, paralelo_id)',
+         'Ya existe un registro con esta gestion y este paralelo.'),
+    ]
 
     @api.depends('gestion_id', 'paralelo_id','curso_id','sucursal_id')
     def _compute_gestion_paralelo(self):

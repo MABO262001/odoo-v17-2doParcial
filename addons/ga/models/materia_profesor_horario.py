@@ -29,6 +29,17 @@ class MateriaProfesorHorario(models.Model):
         return result
     
     _sql_constraints = [
-        ('unique_materia_profesor_horario', 'UNIQUE(materia_profesor_id, horario_id)',
-         'Ya existe un registro con esta combinación de Materia Profesor y Horario.'),
+        ('unique_gestion_paralelo', 'UNIQUE(gestion_id, paralelo_id)',
+         'Ya existe un registro con esta gestion y este paralelo.'),
     ]
+    
+    @api.constrains('gestion_id', 'paralelo_id')
+    def _check_unique_gestion_paralelo(self):
+        for record in self:
+            existing_record = self.search([
+                ('gestion_id', '=', record.gestion_id.id),
+                ('paralelo_id', '=', record.paralelo_id.id),
+                ('id', '!=', record.id)
+            ])
+            if existing_record:
+                raise ValidationError('Ya existe un registro con esta gestion y este paralelo.')
