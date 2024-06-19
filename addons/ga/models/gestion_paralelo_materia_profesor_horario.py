@@ -29,14 +29,3 @@ class GestionParaleloMateriaProfesorHorario(models.Model):
             name = combinacion
             result.append((record.id, name))
         return result
-
-    # @api.model
-    # def default_get(self, fields):
-    #     res = super(Nota, self).default_get(fields)
-    #     estudiante_id = self.env.context.get('active_id')
-    #     print("#########################################ID del estudiante:", estudiante_id)
-    #     if estudiante_id:
-    #         inscripciones = self.env['gestion_academica.inscripcion'].search([('estudiante_id', '=', estudiante_id)])
-    #         gestion_paralelo_materia_profesor_horario_ids = inscripciones.mapped('gestion_paralelo_materia_profesor_horario_id')
-    #         res['domain_gestion_paralelo_materia_profesor_horario_id'] = [('id', 'in', gestion_paralelo_materia_profesor_horario_ids.ids)]
-    #     return res

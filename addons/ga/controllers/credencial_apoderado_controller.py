@@ -13,6 +13,7 @@ class CredencialApoderado(http.Controller):
                 data.append({
                     'id': apoderado.id,
                     'ci': apoderado.ci,
+                    'user': apoderado.name,
                     'telefono': apoderado.telefono,
                 })
             return request.make_response(
