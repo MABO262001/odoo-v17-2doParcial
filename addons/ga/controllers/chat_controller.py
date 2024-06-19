@@ -198,7 +198,7 @@ class ChatController(http.Controller):
                 },
                 json={
                     'model': 'gpt-3.5-turbo',
-                    'max_tokens': 150,
+                    'max_tokens': 250,
                     'messages': [{'role': 'user', 'content': prompt}]
                 }
             )
