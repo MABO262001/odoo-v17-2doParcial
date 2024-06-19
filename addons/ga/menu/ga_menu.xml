@@ -23,12 +23,6 @@
         sequence="10"
         action="abrir_apoderado_view" />
 
-    <!-- <menuitem id="menu_nota"
-        name="Notas"
-        parent="menu_estudiante_root"
-        sequence="10"
-        action="abrir_nota_view" /> -->
-
     <menuitem id="menu_profesor"
         name="Profesores"
         parent="ga_menu_root"
@@ -94,12 +88,18 @@
         sequence="90" />
 
 
-
     <menuitem id="menu_inscripcion"
         name="Inscripciones"
         parent="menu_servicios_root"
         sequence="40"
         action="abrir_inscripcion_view" />
+
+    <menuitem id="menu_avisos"
+        name="Avisos"
+        parent="ga_menu_root"
+        sequence="40"
+        action="abrir_aviso_view" />
+
 
     <!-- <menuitem id="menu_pagos"
         name="Pagos"

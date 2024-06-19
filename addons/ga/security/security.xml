@@ -148,8 +148,15 @@
             <field name="domain_force">[(1,'=',1)]</field>
         </record>
 
+        <record id="rule_gestion_academica_aviso" model="ir.rule">
+            <field name="name">Aviso: Regla de acceso</field>
+            <field name="model_id" ref="model_gestion_academica_aviso" />
+            <field name="groups" eval="[(4, ref('group_gestion_academica_user'))]" />
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
 
-        <!-- Regla de acceso público APIS -->
+
+        <!-- Regla de acceso público APIS, okis uwu -->
 
         <!-- API Estudiante -->
         <record id="rule_public_gestion_academica_estudiante" model="ir.rule">

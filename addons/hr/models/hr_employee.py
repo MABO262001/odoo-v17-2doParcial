@@ -142,6 +142,8 @@ class HrEmployeePrivate(models.Model):
     # properties
     employee_properties = fields.Properties('Properties', definition='company_id.employee_properties_definition', precompute=False)
 
+    profesor_ids = fields.One2many('gestion_academica.profesor', 'profesor_id', string='Profesores')
+    
     _sql_constraints = [
         ('barcode_uniq', 'unique (barcode)', "The Badge ID must be unique, this one is already assigned to another employee."),
         ('user_uniq', 'unique (user_id, company_id)', "A user cannot be linked to multiple employees in the same company.")

@@ -11,6 +11,8 @@ class Partner(models.Model):
         'hr.employee', 'work_contact_id', string='Employees', groups="hr.group_hr_user",
         help="Related employees based on their private address")
     employees_count = fields.Integer(compute='_compute_employees_count', groups="hr.group_hr_user")
+    
+    estudiante_ids = fields.One2many('gestion_academica.estudiante', 'estudiante_id', string='Estudiantes')
 
     def _compute_employees_count(self):
         for partner in self:

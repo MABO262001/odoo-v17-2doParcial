@@ -19,6 +19,7 @@ from . import inscripcion
 from . import gestion_paralelo_materia_profesor_horario
 from . import nota
 from . import matricula
+from . import aviso
 
 # Expone las clases de tus modelos
 Estudiante = estudiante.Estudiante

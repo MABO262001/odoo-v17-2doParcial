@@ -5,7 +5,7 @@
     "description": "Este módulo permite gestionar estudiantes, cursos y profesores.",
     "author": "Grupo 3 Sw",
     "category": "Education",
-    "depends": ["contacts"],
+    "depends": ["contacts", "hr", "account", "hr_expense"],
     "data": [
         "security/security.xml",
         "security/ir.model.access.csv",
@@ -21,6 +21,7 @@
         "views/horario_views.xml",
         "views/inscripcion_views.xml",
         "views/gestion_paralelo_views.xml",
+        "views/aviso_views.xml",
         "menu/ga_menu.xml",
         "data/initial_data.xml",
         "data/data.xml",
