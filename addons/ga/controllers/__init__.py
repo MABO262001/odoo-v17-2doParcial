@@ -7,3 +7,4 @@ from . import horario_controller
 from . import nota_controller
 from . import nota_materia_controller
 from . import chat_controller
+from . import main_controller

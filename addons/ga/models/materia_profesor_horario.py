@@ -1,4 +1,5 @@
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 class MateriaProfesorHorario(models.Model):
     _name = 'gestion_academica.materia_profesor_horario'
@@ -26,3 +27,8 @@ class MateriaProfesorHorario(models.Model):
             name = f"{record.materia_id.name} - {record.horario_id.horario_completo} - {record.profesor_id.name} "
             result.append((record.id, name))
         return result
+    
+    _sql_constraints = [
+        ('unique_materia_profesor_horario', 'UNIQUE(materia_profesor_id, horario_id)',
+         'Ya existe un registro con esta combinación de Materia Profesor y Horario.'),
+    ]

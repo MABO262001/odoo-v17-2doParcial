@@ -22,6 +22,8 @@
         "views/inscripcion_views.xml",
         "views/gestion_paralelo_views.xml",
         "views/aviso_views.xml",
+        "views/report_horario.xml",
+        "views/report.xml",
         "menu/ga_menu.xml",
         "data/initial_data.xml",
         "data/data.xml",

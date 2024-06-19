@@ -1,0 +1,11 @@
+<odoo>
+    <report
+        id="gestion_academica.report_horario_id"
+        model="gestion_academica.gestion_paralelo_materia_profesor_horario"
+        string="Cuadro Horario"
+        report_type="qweb-pdf"
+        name="gestion_academica.report_horario"
+        file="gestion_academica.report_horario"
+        print_report_name="'Cuadro Horario - %s' % (object.name)"
+    />
+</odoo>

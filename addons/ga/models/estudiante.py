@@ -7,7 +7,7 @@ class Estudiante(models.Model):
     name = fields.Char(string='Nombre', required=True)
     correo = fields.Char(string='Correo')
     genero = fields.Selection(
-        [('male', 'Masculino'), ('female', 'Femenino'), ('other', '35 tipos de geys')],
+        [('male', 'Masculino'), ('female', 'Femenino'), ('other', 'Otro')],
         string='Género'
     )
     direccion = fields.Char(string='Dirección')

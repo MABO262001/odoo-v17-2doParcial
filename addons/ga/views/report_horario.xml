@@ -1,0 +1,36 @@
+<odoo>
+    <template id="report_horario">
+        <t t-call="web.external_layout">
+            <div class="page">
+                <h2>Cuadro Horario</h2>
+                <t t-foreach="data.items()" t-as="dia">
+                    <h3><t t-esc="dia[0]"/></h3>
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Materia</th>
+                                <th>Profesor</th>
+                                <th>Hora Inicio</th>
+                                <th>Hora Final</th>
+                                <th>Gestión</th>
+                                <th>Paralelo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="dia[1]" t-as="horario">
+                                <tr>
+                                    <td><t t-esc="horario['materia']"/></td>
+                                    <td><t t-esc="horario['profesor']"/></td>
+                                    <td><t t-esc="horario['hora_inicio']"/></td>
+                                    <td><t t-esc="horario['hora_final']"/></td>
+                                    <td><t t-esc="horario['gestion']"/></td>
+                                    <td><t t-esc="horario['paralelo']"/></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </t>
+            </div>
+        </t>
+    </template>
+</odoo>

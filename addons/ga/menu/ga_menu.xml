@@ -24,13 +24,13 @@
         action="abrir_apoderado_view" />
 
     <menuitem id="menu_profesor"
-        name="Profesores"
+        name="Profesores y materias"
         parent="ga_menu_root"
         sequence="20"
         action="abrir_profesor_view" />
 
     <menuitem id="menu_materia"
-        name="Materias"
+        name="Horarios"
         parent="ga_menu_root"
         sequence="20"
         action="abrir_materia_view" />
@@ -65,7 +65,7 @@
         action="abrir_paralelo_view" />
 
     <menuitem id="menu_gestion"
-        name="Gestiones"
+        name="Gestiones y paralelos"
         parent="ga_menu_root"
         sequence="20"
         action="abrir_gestion_view" />
