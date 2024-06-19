@@ -61,15 +61,16 @@
                             <div class="mb16 col-8 col-lg-10 px-0">
                                 <div class="row">
                                     <h2 class="col-12 col-lg-10">
-                                        <field name="name" required="1" placeholder="Nombre"/>
+                                        <field name="name" required="1" placeholder="Titulo del aviso"/>
+                                        <field name="fecha" required="1" placeholder="Fecha"/>
                                                 
                                     </h2>
                                 </div>
                             </div>
                         </div>
                         <notebook colspan="4">
-                            <page name="informacion_personal" string="Informacion personal">
-                                <group name="informacion_personal">
+                            <page name="Detalles" string="Detalles">
+                                <group name="Detalles">
                                     <group>
                                         <field name="contenido" required="1"/>
                                         <field name="sucursal_id" required="1"/>

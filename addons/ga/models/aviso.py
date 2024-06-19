@@ -6,4 +6,5 @@ class Aviso(models.Model):
 
     name = fields.Char(string='Titulo del aviso', required=True)
     contenido = fields.Text(string='Contenido')
+    fecha = fields.Date(string='Fecha')
     sucursal_id = fields.Many2one('gestion_academica.sucursal', string='Sucursal', required=True)
