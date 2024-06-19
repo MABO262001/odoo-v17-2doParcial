@@ -7,4 +7,8 @@ from . import horario_controller
 from . import nota_controller
 from . import nota_materia_controller
 from . import chat_controller
+<<<<<<< Updated upstream
 from . import main_controller
+=======
+from . import avisos_controller
+>>>>>>> Stashed changes
